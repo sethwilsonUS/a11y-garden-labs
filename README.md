@@ -31,6 +31,11 @@ Blog posts are MDX files in `content/blog/`. See **[content/blog/README.md](cont
 - Markdown formatting, code blocks, and images
 - Drafts folder convention and validation before commit
 
+## License
+
+- **Software:** MIT
+- **Content** (blog posts, etc.): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — reuse with attribution. See [LICENSE](LICENSE) for details.
+
 ## Contributing
 
 Contributions to the site format, code, and docs are welcome. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for guidelines. Blog posts require prior discussion before submission.
