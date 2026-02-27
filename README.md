@@ -30,3 +30,7 @@ Blog posts are MDX files in `content/blog/`. See **[content/blog/README.md](cont
 - Image dimensions (thumbnails vs. in-post)
 - Markdown formatting, code blocks, and images
 - Drafts folder convention and validation before commit
+
+## Contributing
+
+Contributions to the site format, code, and docs are welcome. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for guidelines. Blog posts require prior discussion before submission.
