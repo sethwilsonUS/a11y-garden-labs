@@ -1,24 +1,26 @@
 # A11y Garden Labs
 
-A nonprofit-oriented hub for accessibility-focused projects. Built with Next.js, Content Collections, and the Garden theme.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![MDX](https://img.shields.io/badge/MDX-3-1a1a1a?style=flat-square)](https://mdxjs.com/)
+
+This is the open-source repository for **[a11ygardenlabs.org](https://a11ygardenlabs.org)** — the umbrella site for accessibility-focused projects from A11y Garden Labs.
+
+## Projects
+
+- **[A11y Garden](https://a11ygarden.org)** — A friendly accessibility audit tool for everyday developers
+- **[Curio Garden](https://curiogarden.org)** — A listening-first way to wander through knowledge, turning Wikipedia into accessible audio experiences
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Writing Blog Posts
 
@@ -27,19 +29,4 @@ Blog posts are MDX files in `content/blog/`. See **[content/blog/README.md](cont
 - Frontmatter fields (title, date, description, image, tags)
 - Image dimensions (thumbnails vs. in-post)
 - Markdown formatting, code blocks, and images
-- Validation before commit
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Drafts folder convention and validation before commit
