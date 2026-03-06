@@ -9,6 +9,26 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "a11ygarden.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "curiogarden.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "infinitepoetry.ai",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "starship-alexandria.vercel.app",
+        pathname: "/**",
+      },
     ],
   },
 };

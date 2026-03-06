@@ -46,3 +46,8 @@ content/blog/drafts/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor / AI tooling
+.specstory
+.cursor
+.cursorindexingignore
