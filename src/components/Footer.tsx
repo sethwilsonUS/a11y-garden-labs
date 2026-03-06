@@ -56,6 +56,14 @@ export function Footer() {
                   About
                 </Link>
               </li>
+              <li>
+                <a
+                  href="mailto:seth@a11ygardenlabs.dev"
+                  className="hover:text-accent transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -64,8 +72,8 @@ export function Footer() {
 
         <div className="pt-6 text-center">
           <p className="text-xs text-theme-muted leading-relaxed">
-            © 2026 A11y Garden Labs. Cultivating accessible tools for digital
-            and spiritual life.
+            © 2026 A11y Garden Labs. Cultivating accessible tools for growth
+            and learning.
           </p>
         </div>
       </div>

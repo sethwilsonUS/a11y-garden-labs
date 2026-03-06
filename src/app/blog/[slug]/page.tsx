@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
+import { mdxComponents } from "@/components/mdx-components";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -74,7 +75,7 @@ export default async function BlogPostPage({
         </ul>
       )}
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <MDXContent code={post.mdx} />
+        <MDXContent code={post.mdx} components={mdxComponents} />
       </div>
     </article>
   );

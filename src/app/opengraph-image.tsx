@@ -1,10 +1,14 @@
 import { ImageResponse } from "next/og";
+import { loadOgFonts } from "./og-fonts";
 
-export const alt = "A11y Garden Labs — Cultivating accessible tools for digital and spiritual life.";
+export const alt =
+  "A11y Garden Labs — Cultivating accessible tools for growth and learning.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OgImage() {
+  const fonts = loadOgFonts();
+
   return new ImageResponse(
     (
       <div
@@ -15,56 +19,63 @@ export default function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #171717 0%, #1a2420 50%, #171717 100%)",
-          fontFamily: "sans-serif",
-          padding: 60,
+          backgroundColor: "#036b4a",
+          fontFamily: fonts.length ? "Fraunces, sans-serif" : "sans-serif",
         }}
       >
+        {/* Leaf logo */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          fill="none"
+          width="120"
+          height="120"
+        >
+          <g
+            stroke="#fff"
+            strokeWidth="24"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M256 80C172 136 144 196 144 248c0 56 56 96 112 112 56-16 112-56 112-112 0-52-28-112-112-168z" />
+            <path d="M256 80v320" />
+            <path d="M256 160l-48 48" />
+            <path d="M256 160l48 48" />
+            <path d="M256 240l-64 48" />
+            <path d="M256 240l64 48" />
+          </g>
+        </svg>
+
         <div
           style={{
-            fontSize: 56,
+            fontSize: "72px",
             fontWeight: 700,
-            color: "#f0ede6",
-            marginBottom: 16,
-            textAlign: "center",
+            color: "#ffffff",
+            marginTop: "24px",
+            lineHeight: 1.1,
+            letterSpacing: "-0.03em",
           }}
         >
           A11y Garden Labs
         </div>
+
         <div
           style={{
-            fontSize: 28,
-            color: "#a8b89e",
-            textAlign: "center",
+            fontSize: "32px",
+            fontWeight: 400,
+            color: "rgba(255, 255, 255, 0.8)",
+            marginTop: "12px",
+            fontFamily: fonts.length ? "DM Sans, sans-serif" : "sans-serif",
+            letterSpacing: "-0.01em",
           }}
         >
-          Cultivating accessible tools for digital and spiritual life.
-        </div>
-        <div
-          style={{
-            width: 80,
-            height: 80,
-            marginTop: 40,
-            borderRadius: 12,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#059669",
-          }}
-        >
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="1.5"
-          >
-            <path d="M12 2C6.5 6 4 11 4 15c0 3.5 3.5 6 8 7 4.5-1 8-3.5 8-7 0-4-2.5-9-8-13z" />
-          </svg>
+          Cultivating accessible tools for growth and learning
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts,
+    },
   );
 }

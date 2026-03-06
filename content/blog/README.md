@@ -144,6 +144,40 @@ Here's a custom component:
 
 Keep it simple unless you need custom interactivity. Standard Markdown covers most blog content.
 
+### BlogImage Component
+
+Use `BlogImage` instead of plain `![alt](url)` when you want **Next.js image optimization** and **configurable rounding**. It's available globally in all MDX files — no import needed:
+
+```mdx
+<BlogImage src="/blog/screenshot.png" alt="Audit results page" rounded="subtle" />
+```
+
+**Rounding options:**
+
+| Value        | Effect                         | Good for                    |
+| ------------ | ------------------------------ | --------------------------- |
+| `full`       | Circular                       | Headshots, avatars          |
+| `aggressive` | Very rounded (`rounded-3xl`)   | Personal photos             |
+| `moderate`   | Medium rounding (`rounded-xl`) | General images *(default)*  |
+| `subtle`     | Light rounding (`rounded-lg`)  | Screenshots, project images |
+| `none`       | Square corners                 | Diagrams, technical images  |
+
+**Optional props:**
+
+- `width` / `height` — defaults to 1200×800. Override for non-standard aspect ratios.
+- `caption` — adds a centered caption below the image in a `<figure>`.
+
+```mdx
+<BlogImage
+  src="/blog/my-photo.jpg"
+  alt="Garden in bloom"
+  rounded="aggressive"
+  caption="The garden in spring"
+/>
+```
+
+Plain `![alt](url)` still works for quick images that don't need optimization or custom rounding.
+
 ---
 
 ## File Naming and Slugs

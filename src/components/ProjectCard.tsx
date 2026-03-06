@@ -12,6 +12,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  slug?: string;
 }
 
 const statusStyles: Record<ProjectStatus, string> = {
@@ -31,12 +32,25 @@ export function ProjectCard({
   githubUrl,
   ogImage,
   ogImageAlt,
+  slug,
 }: ProjectCardProps) {
+  const detailHref = slug ? `/projects/${slug}` : undefined;
+
   return (
     <article className="garden-bed p-6 overflow-hidden">
       {ogImage && (
         <div className="-mx-6 -mt-6 mb-5">
-          {url ? (
+          {detailHref ? (
+            <Link href={detailHref}>
+              <Image
+                src={ogImage}
+                alt={ogImageAlt || `${name} preview`}
+                width={1200}
+                height={630}
+                className="w-full h-auto"
+              />
+            </Link>
+          ) : url ? (
             <Link href={url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={ogImage}
@@ -59,7 +73,16 @@ export function ProjectCard({
       )}
       <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
         <h2 className="font-display font-semibold text-xl text-theme-primary m-0">
-          {name}
+          {detailHref ? (
+            <Link
+              href={detailHref}
+              className="text-theme-primary hover:text-accent transition-colors no-underline"
+            >
+              {name}
+            </Link>
+          ) : (
+            name
+          )}
         </h2>
         <span
           className={`text-xs font-semibold px-3 py-1 rounded-full ${statusStyles[status]}`}
