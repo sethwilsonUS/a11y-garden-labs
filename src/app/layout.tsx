@@ -37,17 +37,19 @@ export const metadata: Metadata = {
     template: "%s | A11y Garden Labs",
   },
   description:
-    "Cultivating accessible tools for digital and spiritual life.",
+    "Cultivating accessible tools for growth and learning.",
   openGraph: {
     title: "A11y Garden Labs",
-    description: "Cultivating accessible tools for digital and spiritual life.",
+    description: "Cultivating accessible tools for growth and learning.",
     url: "https://a11ygardenlabs.org",
     siteName: "A11y Garden Labs",
     locale: "en_US",
     type: "website",
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/opengraph-image"],
   },
 };
 

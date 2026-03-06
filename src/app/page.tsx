@@ -16,7 +16,7 @@ export default function HomePage() {
           A11y Garden Labs
         </h1>
         <p className="text-xl text-theme-secondary font-medium mb-4">
-          Cultivating accessible tools for digital and spiritual life.
+          Cultivating accessible tools for growth and learning.
         </p>
         <p className="text-theme-primary leading-relaxed">
           A11y Garden Labs is a small, experiment-friendly studio building open,

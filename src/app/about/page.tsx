@@ -1,77 +1,72 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { allPages } from "content-collections";
+import { MDXContent } from "@content-collections/mdx/react";
+import { mdxComponents } from "@/components/mdx-components";
+
+const page = allPages.find((p) => p.slug === "about");
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "About the founder and A11y Garden Labs — a small studio cultivating accessible tools for digital and spiritual life.",
+  title: page?.title,
+  description: page?.description,
 };
 
+function AboutBanner() {
+  return (
+    <div
+      className="relative mb-12 overflow-hidden rounded-2xl text-center"
+      style={{ backgroundColor: "#036b4a" }}
+    >
+      <div className="flex flex-col items-center px-8 py-12 sm:px-12 sm:py-16">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          fill="none"
+          className="size-16 sm:size-20"
+        >
+          <g
+            stroke="#fff"
+            strokeWidth="24"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M256 80C172 136 144 196 144 248c0 56 56 96 112 112 56-16 112-56 112-112 0-52-28-112-112-168z" />
+            <path d="M256 80v320" />
+            <path d="M256 160l-48 48" />
+            <path d="M256 160l48 48" />
+            <path d="M256 240l-64 48" />
+            <path d="M256 240l64 48" />
+          </g>
+        </svg>
+
+        <h1
+          className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mt-5"
+          style={{ color: "#ffffff", letterSpacing: "-0.03em" }}
+        >
+          A11y Garden Labs
+        </h1>
+
+        <p
+          className="mt-3 text-base sm:text-lg"
+          style={{ color: "rgba(255, 255, 255, 0.8)" }}
+        >
+          Cultivating accessible tools for growth and learning
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function AboutPage() {
+  if (!page) notFound();
+
   return (
     <>
-      <h1 className="font-display text-3xl lg:text-4xl font-bold text-theme-primary mb-12">
-        About
-      </h1>
-
-      <section className="mb-12">
-        <h2 className="font-display text-xl font-bold text-theme-primary mb-4">
-          About Me
-        </h2>
-        <div className="space-y-4 text-theme-primary leading-relaxed">
-          <p>
-            I&apos;m a full-stack developer who happens to be legally blind.
-            I build tools born from lived experience — tools that help people
-            like me navigate the web, explore information, and find communities
-            where we belong.
-          </p>
-          <p>
-            I&apos;ve been accepted to Candler School of Theology, where I
-            hope to explore the intersection of faith and accessibility.
-            Making the web work for everyone is not just a technical goal;
-            it&apos;s a matter of dignity.
-          </p>
-          <p>
-            I&apos;m passionate about building in public, sharing what I learn,
-            and creating tools that others can use and improve.
-          </p>
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="font-display text-xl font-bold text-theme-primary mb-4">
-          About A11y Garden Labs
-        </h2>
-        <div className="space-y-4 text-theme-primary leading-relaxed">
-          <p className="font-medium text-theme-secondary">
-            A11y Garden Labs exists to design, build, and share tools that make
-            the web — and the world — more accessible for blind and visually
-            impaired people, and for anyone who benefits from inclusive design.
-          </p>
-          <p>
-            A11y Garden Labs is a small, experiment-friendly studio focused on
-            accessibility, education, and connection. We create open,
-            human-centered tools that help people explore information, test and
-            improve website accessibility, and find communities of faith where
-            they can fully belong. From developer-facing audit tools to
-            listening-friendly knowledge apps, our work is grounded in lived
-            experience of visual impairment and a belief that access is a matter
-            of dignity, not convenience.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="font-display text-xl font-bold text-theme-primary mb-4">
-          Values
-        </h2>
-        <ul className="list-disc pl-6 space-y-2 text-theme-primary leading-relaxed">
-          <li>Accessibility first</li>
-          <li>Open source</li>
-          <li>Dignity over convenience</li>
-          <li>Faith-informed service</li>
-          <li>Building in public</li>
-        </ul>
-      </section>
+      <AboutBanner />
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <MDXContent code={page.mdx} components={mdxComponents} />
+      </div>
     </>
   );
 }
