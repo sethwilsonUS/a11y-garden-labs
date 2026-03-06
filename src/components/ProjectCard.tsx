@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type ProjectStatus = "Live" | "In development" | "In exploration";
 
@@ -9,6 +10,8 @@ interface ProjectCardProps {
   status: ProjectStatus;
   url?: string;
   githubUrl?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const statusStyles: Record<ProjectStatus, string> = {
@@ -26,9 +29,34 @@ export function ProjectCard({
   status,
   url,
   githubUrl,
+  ogImage,
+  ogImageAlt,
 }: ProjectCardProps) {
   return (
-    <article className="garden-bed p-6">
+    <article className="garden-bed p-6 overflow-hidden">
+      {ogImage && (
+        <div className="-mx-6 -mt-6 mb-5">
+          {url ? (
+            <Link href={url} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={ogImage}
+                alt={ogImageAlt || `${name} preview`}
+                width={1200}
+                height={630}
+                className="w-full h-auto"
+              />
+            </Link>
+          ) : (
+            <Image
+              src={ogImage}
+              alt={ogImageAlt || `${name} preview`}
+              width={1200}
+              height={630}
+              className="w-full h-auto"
+            />
+          )}
+        </div>
+      )}
       <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
         <h2 className="font-display font-semibold text-xl text-theme-primary m-0">
           {name}
