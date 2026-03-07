@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Support",
   description:
     "Support A11y Garden Labs — free, open-source accessibility tools. Your support helps cover hosting and development.",
+  alternates: { canonical: "/support" },
 };
 
 export default function SupportPage() {

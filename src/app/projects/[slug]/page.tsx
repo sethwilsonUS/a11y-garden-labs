@@ -23,6 +23,7 @@ export async function generateMetadata({
   return {
     title: project.name,
     description: project.tagline,
+    alternates: { canonical: `/projects/${slug}` },
   };
 }
 
@@ -52,7 +53,7 @@ export default async function ProjectPage({
         href="/projects"
         className="text-theme-muted text-sm hover:text-accent mb-6 inline-block"
       >
-        &larr; Back to projects
+        <span aria-hidden="true">&larr;</span> Back to projects
       </Link>
 
       {project.ogImage && (

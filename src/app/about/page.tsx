@@ -9,6 +9,7 @@ const page = allPages.find((p) => p.slug === "about");
 export const metadata: Metadata = {
   title: page?.title,
   description: page?.description,
+  alternates: { canonical: "/about" },
 };
 
 function AboutBanner() {
@@ -63,6 +64,39 @@ export default function AboutPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Seth Wilson",
+            jobTitle: "Founder & Developer",
+            url: "https://www.a11ygardenlabs.dev/about",
+            worksFor: {
+              "@type": "Organization",
+              name: "A11y Garden Labs",
+              url: "https://www.a11ygardenlabs.dev",
+            },
+            alumniOf: [
+              {
+                "@type": "CollegeOrUniversity",
+                name: "Trinity College, Oxford",
+              },
+              {
+                "@type": "CollegeOrUniversity",
+                name: "University of Texas at Tyler",
+              },
+            ],
+            knowsAbout: [
+              "Web Accessibility",
+              "WCAG",
+              "Assistive Technology",
+              "Full-Stack Development",
+            ],
+          }),
+        }}
+      />
       <AboutBanner />
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <MDXContent code={page.mdx} components={mdxComponents} />
