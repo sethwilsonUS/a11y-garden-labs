@@ -11,3 +11,25 @@ published: true
 ---
 
 A11y Garden helps developers and teams understand, prioritize, and improve the accessibility of their websites through approachable reports, clear language, and a focus on real users — not just checkboxes. Instead of walls of technical warnings, A11y Garden translates findings into human-readable summaries, simple letter grades, and visual cues that help teams see their progress over time.
+
+## Features
+
+- **Automated accessibility scanning** — Uses axe-core to test websites against WCAG 2.2 guidelines
+- **Dual viewport scanning** — Scans at both desktop (1920×1080) and mobile (390×844) viewports in parallel, with separate results for each
+- **AI-powered insights** — GPT-4.1 Mini translates technical violations into plain English, with separate analysis per viewport
+- **Letter grade system** — Per-viewport grades plus a combined weighted grade (60% desktop + 40% mobile)
+- **Platform & framework detection** — Detects CMS platforms (WordPress, Shopify, Squarespace, etc.) and frontend frameworks (Next.js, React, Angular, Svelte, etc.) with confidence levels, providing platform-specific fix advice
+- **Community database** — Browse and search accessibility audits shared by signed-in users
+- **User accounts** — Save and manage your audit history with Clerk authentication
+- **AI agent fix plans** — Generate downloadable AGENTS.md fix-plan files from audit results, ready to drop into Cursor, Codex, Claude Code, or GitHub Copilot (developer framework sites only)
+- **Export reports** — Copy markdown reports including both desktop and mobile results
+- **Page screenshots** — Captures JPEG screenshots at both viewports so users can verify the scanner reached the real site
+- **WAF bypass** — Automatically detects and bypasses Web Application Firewalls using Browserless BrowserQL stealth mode with a multi-tier escalation chain
+- **Smart fallback strategy** — Tries fast Playwright BaaS first, detects WAF blocks or timeouts, then escalates to BQL for authenticated users
+- **Domain strategy cache** — Remembers which domains need BQL bypass via Redis, skipping the BaaS attempt on repeat scans
+- **robots.txt compliance** — Advisory robots.txt checking before each scan with proper User-Agent identification
+- **CLI tool** — Scan sites from your terminal with `a11ygarden <url>`, dual-viewport by default
+- **Rate limiting & concurrency** — Per-user sliding window (30/hr authenticated, 10/hr anonymous) and global concurrency cap via Upstash Redis
+- **Light/dark themes** — Modern, accessible interface built with Tailwind CSS v4
+- **Safe mode fallback** — Automatically retries with a reduced rule set when complex sites crash the full axe-core scan
+- **Graceful degradation** — Runs without env vars for local demos; a banner warns which features are disabled
