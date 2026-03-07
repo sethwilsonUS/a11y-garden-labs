@@ -88,10 +88,12 @@ const projects = defineCollection({
             .replace(/^content\/projects\//, "")
             .replace(/\.mdx$/, "")
         : "");
+    const summary = document.content.split(/\n\s*\n/)[0].trim();
     return {
       ...document,
       mdx,
       slug,
+      summary,
     };
   },
 });

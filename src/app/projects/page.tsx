@@ -26,7 +26,7 @@ export default function ProjectsPage() {
             key={project.slug}
             name={project.name}
             tagline={project.tagline}
-            description={project.content}
+            description={project.summary}
             status={project.status}
             url={project.url}
             githubUrl={project.githubUrl}
