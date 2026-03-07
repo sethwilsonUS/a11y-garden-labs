@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Our Gardens — accessibility-focused tools, AI-generated poetry, and cozy games for everyone.",
+  alternates: { canonical: "/projects" },
 };
 
 const publishedProjects = allProjects

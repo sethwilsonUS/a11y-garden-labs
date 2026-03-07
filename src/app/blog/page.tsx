@@ -5,6 +5,7 @@ import { PostCard } from "@/components/PostCard";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Thoughts on accessibility, faith, and building in public.",
+  alternates: { canonical: "/blog" },
 };
 
 const publishedPosts = allPosts

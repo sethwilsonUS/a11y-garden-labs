@@ -31,6 +31,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description || "",
+    alternates: { canonical: `/blog/${slug}` },
   };
 }
 
@@ -52,7 +53,7 @@ export default async function BlogPostPage({
         href="/blog"
         className="text-theme-muted text-sm hover:text-accent mb-6 inline-block"
       >
-        ← Back to blog
+        <span aria-hidden="true">←</span> Back to blog
       </Link>
       <h1 className="font-display text-3xl lg:text-4xl font-bold text-theme-primary mb-2">
         {post.title}

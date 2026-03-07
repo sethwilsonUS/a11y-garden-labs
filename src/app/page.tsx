@@ -70,7 +70,7 @@ export default function HomePage() {
           href="/projects"
           className="text-accent font-medium hover:underline"
         >
-          See all projects →
+          See all projects <span aria-hidden="true">→</span>
         </Link>
       </section>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
           ))}
         </div>
         <Link href="/blog" className="text-accent font-medium hover:underline">
-          Read all posts →
+          Read all posts <span aria-hidden="true">→</span>
         </Link>
       </section>
 

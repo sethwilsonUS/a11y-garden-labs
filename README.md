@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![MDX](https://img.shields.io/badge/MDX-3-1a1a1a?style=flat-square)](https://mdxjs.com/)
 
-This is the open-source repository for **[a11ygardenlabs.org](https://a11ygardenlabs.org)** — the umbrella site for accessibility-focused projects from A11y Garden Labs.
+This is the open-source repository for **[a11ygardenlabs.dev](https://www.a11ygardenlabs.dev)** — the umbrella site for accessibility-focused projects from A11y Garden Labs.
 
 ## Projects
 

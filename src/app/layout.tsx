@@ -26,22 +26,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      (process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : "http://localhost:3000")
-  ),
+  metadataBase: new URL("https://www.a11ygardenlabs.dev"),
   title: {
     default: "A11y Garden Labs",
     template: "%s | A11y Garden Labs",
   },
   description:
     "Cultivating accessible tools for growth and learning.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "A11y Garden Labs",
     description: "Cultivating accessible tools for growth and learning.",
-    url: "https://a11ygardenlabs.org",
+    url: "https://www.a11ygardenlabs.dev",
     siteName: "A11y Garden Labs",
     locale: "en_US",
     type: "website",
@@ -70,6 +68,29 @@ export default function RootLayout({
           type="application/rss+xml"
           href="/feed.xml"
           title="A11y Garden Labs Blog RSS"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "A11y Garden Labs",
+              url: "https://www.a11ygardenlabs.dev",
+              logo: "https://www.a11ygardenlabs.dev/icon.png",
+              founder: {
+                "@type": "Person",
+                name: "Seth Wilson",
+                jobTitle: "Founder & Developer",
+              },
+              description:
+                "A small, experiment-friendly studio building open, human-centered tools that make the web more accessible for blind and visually impaired people.",
+              sameAs: [
+                "https://github.com/sethwilsonUS",
+                "https://ko-fi.com/a11ygardenlabs",
+              ],
+            }),
+          }}
         />
         <script
           dangerouslySetInnerHTML={{
